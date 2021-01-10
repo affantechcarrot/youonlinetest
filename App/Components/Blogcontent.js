@@ -7,6 +7,7 @@ import { scale } from '../common'
 const Blogcontent = (props) => {
   const {data} = props
 
+  
   const renderItem = ({ item,index }) => {
     return (
   <View style={{marginBottom:scale(20)}}>

@@ -1,0 +1,107 @@
+{
+  "name": "youonline",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "android-dev": "ENVFILE=.env react-native run-android",
+    "android-staging": "ENVFILE=.env react-native run-android",
+    "android-prod": "ENVFILE=.env.production react-native run-android",
+    "ios-dev": "ENVFILE=.env react-native run-ios",
+    "ios-staging": "ENVFILE=.env react-native run-android",
+    "ios-prod": "ENVFILE=.env.production react-native run-ios",
+    "androidReleaseStage": "cd android && ENVFILE=.env ./gradlew assembleRelease",
+    "androidReleaseProd": "cd android && ENVFILE=.env.production ./gradlew assembleRelease",
+    "androidReleaseStageAab": "cd android && ENVFILE=.env ./gradlew bundleRelease",
+    "androidReleaseProdAab": "cd android && ENVFILE=.env.production ./gradlew bundleRelease",
+    "build": "npm install && cd ./android && ./gradlew build && cd ../ios && pod install --repo-update && cd ..",
+    "clean": "rm -rf ./node_modules **/{.project,*.iml,build} ./ios/{Pods,*.xcworkspace} ./android/{.gradle,.idea}",
+    "clear-cache": "npm run clear-xcode-cache && watchman watch-del-all && rm -rf $TMPDIR/react-* && npm cache verify && rm -rf node_modules/ && npm run clear-npm-pod-cache && rm -rf ios/build/ && cd android && ./gradlew clean && cd .. && npm run start-no-cache"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.11.0",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-community/picker": "^1.8.1",
+    "@react-navigation/native": "^5.8.10",
+    "@react-navigation/stack": "^5.12.8",
+    "apisauce": "^2.0.1",
+    "ignite-cli": "^3.3.0",
+    "lodash": "^4.17.17",
+    "native-base": "^2.15.0",
+    "ramda": "^0.27.0",
+    "react": "16.13.1",
+    "react-native": "^0.63.4",
+    "react-native-bootsplash": "^3.1.2",
+    "react-native-ckeditor": "^1.0.2",
+    "react-native-config": "^1.4.1",
+    "react-native-device-info": "^7.3.1",
+    "react-native-fast-image2": "^8.3.4",
+    "react-native-gesture-handler": "^1.9.0",
+    "react-native-htmlview": "^0.16.0",
+    "react-native-keyboard-aware-scroll-view": "^0.9.3",
+    "react-native-pell-rich-editor": "^1.6.4",
+    "react-native-reanimated": "^1.13.2",
+    "react-native-safe-area-context": "^3.1.9",
+    "react-native-safe-area-view": "^1.1.1",
+    "react-native-screens": "^2.16.1",
+    "react-native-size-matters": "^0.3.1",
+    "react-native-vector-icons": "^7.1.0",
+    "react-native-webview": "^11.0.2",
+    "react-redux": "^7.1.3",
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3",
+    "reduxsauce": "^1.2.0",
+    "seamless-immutable": "^7.1.4",
+    "yarn": "^1.22.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^1.1.0",
+    "babel-jest": "^25.1.0",
+    "eslint": "^6.5.1",
+    "jest": "^25.1.0",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "react-test-renderer": "16.13.1"
+  },
+  "jest": {
+    "preset": "react-native",
+    "testMatch": [
+      "<rootDir>/Tests/**/*.js",
+      "**/?(*.)(spec|test).js?(x)"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/Tests/Setup.js"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "identity-obj-proxy"
+    },
+    "transform": {
+      "^.+\\.(js)$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    },
+    "setupFiles": [
+      "<rootDir>/Tests/Setup"
+    ]
+  },
+  "config": {},
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "describe",
+      "test",
+      "jest",
+      "expect",
+      "fetch",
+      "navigator",
+      "__DEV__",
+      "XMLHttpRequest",
+      "FormData",
+      "React$Element"
+    ]
+  }
+}

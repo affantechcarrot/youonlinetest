@@ -45,6 +45,13 @@ const BlogScreen = (props) => {
     }
   }, [blogFetching]);
 
+//   useEffect(() => {
+//  //  alert(blogPayload,"blogPayload")
+//      if (blogPayload !== null) {
+//        //alert(blogPayload[0].postText)
+//     }
+//   }, [blogPayload]);
+
   return (
     <Root>
       <Container style={{}}>
@@ -53,7 +60,7 @@ const BlogScreen = (props) => {
           style={[styles.blogcontent, {}]}
           contentContainerStyle={{ flexGrow: 1 }}
         >
-          <View style={{ paddingHorizontal: scale(25) }}>
+          <View style={{ paddingHorizontal: scale(25) ,justifyContent:"center"}}>
             <View style={[styles.blogHeader]}>
               <AppTitle
                 title={"Blog"}
@@ -69,7 +76,7 @@ const BlogScreen = (props) => {
                 }}
               >
                 <View style={[styles.createButton]}>
-                  <Icon name={"plus"} light />
+                  <Icon name={"plus"}  />
                   <AppTitle
                     title={"Create"}
                     titleStyle={{
@@ -85,7 +92,7 @@ const BlogScreen = (props) => {
             <Searchbox />
           </View>
           <View style={[styles.blogWrapper]}>
-            <Blogcontent data={blogPayload !== null ? blogPayload : []} />
+            { <Blogcontent data={blogPayload !== null && blogPayload.length > 0 ? blogPayload : []} /> }
           </View>
         </Content>
       </Container>

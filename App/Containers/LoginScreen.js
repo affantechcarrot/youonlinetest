@@ -55,7 +55,7 @@ const LoginScreen = (props) => {
   }, [signInPayload, signInPayloadError]);
 
   useEffect(() => {
-    if (userInfo !== null) {
+    if (userInfo !== null && userInfo !== undefined) {
       props.onNavigate("BlogScreen");
     }
   }, [userInfo]);

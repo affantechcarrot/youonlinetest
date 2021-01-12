@@ -14,11 +14,12 @@ export function* getBlog(api, action) {
   formData.append('server_key', Config.api.server_key);
   formData.append('type', `get_user_posts`);
   formData.append('id', parseInt(user_id));
-  const response = yield call(api.getblog, formData, access_token)
+  const response = yield call(api.getblog, formData, access_token);
+  console.log(response,"response-")
   if (response.data.api_status === 200) {
     yield put(BlogActions.blogSuccess(response.data.data))
   } else {
-    yield put(BlogActions.blogFailure())
+    yield put(BlogActions.blogFailure(null))
   }
 }
 

@@ -3,7 +3,6 @@ import { ApplicationStyles } from '../../Themes/'
 import { scale } from '../../common'
 
 export default StyleSheet.create({
-  ...ApplicationStyles.screen,
   blogcontent:{
     flex:1,marginTop:scale(20)
   },
@@ -18,7 +17,7 @@ export default StyleSheet.create({
     alignItems:"center",
     width:scale(100),
     justifyContent:"center",
-    paddingVertical:scale(12)
+    paddingVertical:scale(10)
    
   },
   blogWrapper:{

@@ -6,8 +6,8 @@ import Inputbox from '../Components/Inputbox'
 import { Icon, scale } from '../common'
 const Searchbox = () => {
   return (
-    <View style={{marginTop:scale(10)}}>
-        <View style={[styles.searchicon]}>
+    <View style={{marginTop:scale(10),position:"relative"}}>
+        <View style={[styles.searchicon,{top:scale(32)}]}>
           <Icon name={'search'} size={scale(15)}/>
         </View>
        <Inputbox
@@ -19,15 +19,5 @@ const Searchbox = () => {
   )
 }
 
-// // Prop type warnings
-// Searchbox.propTypes = {
-//   someProperty: PropTypes.object,
-//   someSetting: PropTypes.bool.isRequired,
-// }
-//
-// // Defaults for props
-// Searchbox.defaultProps = {
-//   someSetting: false
-// }
 
 export default Searchbox

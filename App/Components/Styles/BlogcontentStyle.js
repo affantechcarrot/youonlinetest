@@ -20,30 +20,31 @@ export default StyleSheet.create({
         elevation: 5,
   },
   header:{
-    fontWeight:"600",
+    fontWeight:"bold",
     fontSize:scale(18)
   },
   subheader:{
     fontSize:scale(14),
-    marginVertical:scale(20),
+    marginVertical:scale(15),
     color:'#999999',
-    lineHeight:scale(18)
+    lineHeight:scale(18),
+   
   },
   categoryTitle:{
     backgroundColor: 'rgba(52, 52, 52, 0.9)',
-    borderRadius:scale(12),
+    borderRadius:scale(10),
     position:"absolute",
     zIndex:99999,
-    top:scale(20),
+    top:scale(15),
     right:scale(20),
     
     
   },
   catStyle:{
     color:"#fff",
-    fontSize:scale(14),
-    fontWeight:"bold",
-    paddingVertical:scale(10),
+    fontSize:scale(12),
+    fontWeight:"600",
+    paddingVertical:scale(8),
     paddingHorizontal:scale(20)
   }
 })

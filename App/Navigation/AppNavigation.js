@@ -2,45 +2,67 @@ import 'react-native-gesture-handler'
 import { LogBox } from 'react-native';
 import { Easing} from '../common'
 import React from 'react'
-LogBox.ignoreLogs(['Warning: ...']);
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator,TransitionPresets } from '@react-navigation/stack'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import RegisterScreen from '../Containers/RegisterScreen'
 import LoginScreen from '../Containers/LoginScreen'
 import AddblogScreen from '../Containers/AddblogScreen'
 import BlogScreen from '../Containers/BlogScreen'
 import AuthScreen from '../Containers/AuthScreen'
 import HomeScreen from '../Containers/HomeScreen'
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator,TransitionPresets } from '@react-navigation/stack'
+
+import SearchScreen from '../Containers/SearchScreen'
+import NotificationScreen from '../Containers/NotificationScreen'
+import ChatScreen from '../Containers/ChatScreen'
+import SettingsScreen from '../Containers/SettingsScreen'
 
 
-// const closeConfig = {
-//   animation:"timing",
-//   config:{
-//     duration :100,
-//     easing:Easing.linear
-//   }
-// }
-// const config = {
-//   animation: 'spring',
-//   config: {
-//     stiffness: 1000,
-//     damping: 500,
-//     mass: 3,
-//     overshootClamping: false,
-//     restDisplacementThreshold: 0.01,
-//     restSpeedThreshold: 0.01,
-//   },
-// };
+LogBox.ignoreLogs(['Warning: ...']);
+// import {
+//   HomeScreen, 
+//   SearchScreen,
+//   LoginScreen,
+//   ChatScreen,
+//   NotificationScreen,
+//   SettingsScreen,
+//   AuthScreen,
+//   BlogScreen,
+//   AddblogScreen,
+//   RegisterScreen
+// } from '../Containers/'
 
 
+const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+
+function tabNavigation() {
+  return (
+    < >
+      <Tab.Navigator
+       initialRouteName={'BlogScreen'}
+       screenOptions={({ route, navigation }) => ({
+         gestureDirection: "horizontal",
+         ...TransitionPresets.SlideFromRightIOS
+       })}
+       animation="fade"
+       headerMode="none"
+      >
+        <Tab.Screen name="BlogScreen" component={BlogScreen} />
+        <Tab.Screen name="SearchScreen" component={SearchScreen} />
+        <Tab.Screen name="ChatScreen" component={ChatScreen} />
+        <Tab.Screen name="NotificationScreen" component={NotificationScreen} />
+        <Tab.Screen name="SettingsScreen" component={SettingsScreen} />
+      </Tab.Navigator>
+    </>
+  );
+}
 function MainStackNavigator() {
-  //const routeNameRef = React.useRef();
   const navigationRef = React.useRef();
   return (
 
     <NavigationContainer 
-    ref={navigationRef}
+      ref={navigationRef}
     >
      <Stack.Navigator 
       initialRouteName={'AuthScreen'}
@@ -54,7 +76,7 @@ function MainStackNavigator() {
         name='AuthScreen' component={AuthScreen} />
         <Stack.Screen 
         options={{gestureEnabled: false}}
-        name='BlogScreen' component={BlogScreen}
+        name='BlogScreen' component={tabNavigation}
         />
         <Stack.Screen name='HomeScreen' component={HomeScreen} />
         <Stack.Screen name='AddblogScreen' component={AddblogScreen} />

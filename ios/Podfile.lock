@@ -315,13 +315,13 @@ PODS:
     - React-jsi (= 0.63.4)
   - RNBootSplash (3.1.2):
     - React-Core
-  - RNCAsyncStorage (1.12.0):
-    - React
+  - RNCAsyncStorage (1.12.1):
+    - React-Core
   - RNCMaskedView (0.1.10):
     - React
   - RNCPicker (1.8.1):
     - React-Core
-  - RNDeviceInfo (7.3.1):
+  - RNDeviceInfo (7.4.0):
     - React-Core
   - RNFastImage (8.3.4):
     - React-Core
@@ -547,10 +547,10 @@ SPEC CHECKSUMS:
   React-RCTVibration: ae4f914cfe8de7d4de95ae1ea6cc8f6315d73d9d
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
   RNBootSplash: a9544ba7f1a68b561e61e9efc68e2b3eec05dcef
-  RNCAsyncStorage: 2a692bcb9b69b76a2f1a95f33db057129700af64
+  RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNCPicker: 914b557e20b3b8317b084aca9ff4b4edb95f61e4
-  RNDeviceInfo: 6ecb1d1c87d20e4c62354be0348de23362824dcd
+  RNDeviceInfo: 9538a884f862fe4aa0d7cead9f34e292d41ba8f6
   RNFastImage: d4870d58f5936111c56218dbd7fcfc18e65b58ff
   RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
   RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
